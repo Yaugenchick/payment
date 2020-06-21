@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+    <div class="site">
+        <div class="container">
+            <div class="app" id="app1">
+                <button class="pickup">+</button>
+                <div class="wiev">
+                    <button class="pay">посчитать</button>
+                    <ul>
+                        <li>нарезка штроб<input type="number" name="stroba" min="1" placeholder="метров"></li>
+                        <li>бетон<input type="radio" name="draft" id="concrete"></li>
+                        <li>кирпич<input type="radio" name="draft" id="brick"></li>
+                        <li>блок<input type="radio" name="draft" id="block"></li>
+                        <li>отделка<input type="radio" name="draft" id="finish"></li>
+                        <li>подразетники<input type="number" name="sock" min="1" placeholder="штук"></li>
+                        <li>бетон<input type="radio" name="point" id="concrete"></li>
+                        <li>кирпич<input type="radio" name="point" id="brick"></li>
+                        <li>блок<input type="radio" name="point" id="block"></li>
+                        <li>отделка<input type="radio" name="point" id="finish"></li>
+                        <li>провод<input type="number" name="cable1" min="1" placeholder="метров"></li>
+                        <li>обычный<input type="radio" name="wire" id="usual"></li>
+                        <li>провод<input type="number" name="cable2" min="1" placeholder="метров"></li>
+                        <li>силовой<input type="radio" name="wire" id="power"></li>
+                        <li>провод<input type="number" name="cable3" min="1" placeholder="метров"></li>
+                        <li>оптика<input type="radio" name="wire" id="optic"></li>
+                        <li>провод<input type="number" name="cable4" min="1" placeholder="метров"></li>
+                        <li>витая пара<input type="radio" name="wire" id="twisted"></li>
+                        <li>ввод питания<input type="number" name="PE" min="1" placeholder="метров"></li>
+                        <li>по воздуху<input type="radio" name="work" id="air"></li>
+                        <li>под землей<input type="radio" name="work" id="undegraund"></li>
+                        <li>электроприборы<input type="number" name="clean" min="1" placeholder="штук"></li>
+                        <li>IP камеры мониторы<input type="number" name="video" min="1" placeholder="штук"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
