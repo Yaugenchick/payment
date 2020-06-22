@@ -65,7 +65,7 @@
 }
 .wiev {
     background-color: lightblue;
-    height: 50%;
+    height: 60%;
     overflow-y: auto;
     display: none;
 }
@@ -79,12 +79,12 @@
 .wiev ul li:nth-child(1),
 .wiev ul li:nth-child(6),
 .wiev ul li:nth-child(11),
-.wiev ul li:nth-child(13),
+.wiev ul li:nth-child(14),
 .wiev ul li:nth-child(15),
+.wiev ul li:nth-child(16),
 .wiev ul li:nth-child(17),
-.wiev ul li:nth-child(19),
-.wiev ul li:nth-child(22),
-.wiev ul li:nth-child(23) {
+.wiev ul li:nth-child(18),
+.wiev ul li:nth-child(19) {
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -122,42 +122,29 @@
     transform: translateX(100px);
 }
 .wiev ul li:nth-child(12) input {
-    transform: translateX(42px);
+    transform: translateX(15px);
 }
 .wiev ul li:nth-child(13) input {
-    transform: translateX(100px);
+    transform: translateX(13px);
 }
 .wiev ul li:nth-child(14) input {
-    transform: translateX(50px);
+    transform: translateX(60px);
 }
 .wiev ul li:nth-child(15) input {
-    transform: translateX(100px);
+    transform: translateX(70px);
 }
 .wiev ul li:nth-child(16) input {
-    transform: translateX(63px);
+    transform: translateX(35px);
 }
 .wiev ul li:nth-child(17) input {
-    transform: translateX(100px);
+    transform: translateX(39px);
 }
 .wiev ul li:nth-child(18) input {
-    transform: translateX(30px);
+    transform: translateX(63px);
 }
 .wiev ul li:nth-child(19) input {
-    transform: translateX(95px);
+    transform: translateX(15px);
 }
-.wiev ul li:nth-child(20) input {
-    transform: translateX(30px);
-}
-.wiev ul li:nth-child(21) input {
-    transform: translateX(28px);
-}
-.wiev ul li:nth-child(22) input {
-    transform: translateX(57px);
-}
-.wiev ul li:nth-child(23) input {
-    transform: translateX(10px);
-}
-
 .wiev ul input[type="number"] {
     padding: 7px 15px;
     border: none;

@@ -1,8 +1,7 @@
 let Calc = function (param) {
-    // console.log(param);
 
     let add = function () {
-        
+
         let pickup = document.querySelector('.pickup');
         pickup.classList.add('add');
 
@@ -12,22 +11,42 @@ let Calc = function (param) {
         });
         init();
     };
-    setTimeout(add, 3000);
+    setTimeout(add, 1000);
 
     let init = function () {
         let pay = document.querySelector('.pay');
 
-
         pay.addEventListener('click', function () {
-            let inputelem = document.querySelectorAll('.app .wiev ul li input');
+          /*  let inputelem = document.querySelectorAll('.app .wiev ul li input[type="number"]'),
+                radioelem = document.querySelectorAll('.app .wiev ul li input[type="radio"]'),
+                valueRadio = '',
+                valueInput = '',
+                resultat = '';
 
-            inputelem.forEach(function (elem) {
-                let inputelemValue = elem.value;
-                console.log(inputelemValue);
+            radioelem.forEach(function (elem) {
+                if (elem.checked) valueRadio = elem.value;
+                console.log(valueRadio);
+                console.log(elem);
             });
-            let divelem = document.createElement('div');
-            divelem.classList.add('resultat');
-            console.log(divelem);
+            inputelem.forEach(function (elem) {
+                valueInput = elem.value;
+            });*/
+            let inputvalue = '',
+                radiovalue = '',
+                resultat = '',
+                sum = 0 ;
+                
+
+            let inputelem =document.querySelectorAll('.app .wiev ul li input');
+            inputelem.forEach(function (element) {
+                if(element.checked) radiovalue = element.value ;
+                if(element.getAttribute('name') == 'draft') inputvalue = element.value ;
+               
+
+               console.log(inputvalue);
+               console.log(radiovalue);
+            });
+         
         });
 
     };
