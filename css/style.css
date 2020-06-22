@@ -10,47 +10,6 @@
 .add {
     display: block !important;
 }
-.app {
-    position: relative;
-}
-.app .wiev {
-    border:1px solid #000;
-    border-radius: 5px;
-    padding: 2%;
-    position: fixed;
-    top: 10%;
-    left: 40%;
-    z-index: 22;
-}
-.app .pickup {
-    font-size: 30px;
-    color: goldenrod;
-    font-weight: bold;
-    background-color: lightblue;
-    cursor: pointer;
-    padding: 20px;
-    border: none;
-    border: 1px solid goldenrod;
-    border-radius: 50%;
-    display: none;
-
-    position: fixed;
-    top: 200px;
-    right: 50px;
-    z-index: 22;
-}
-.wiev .pay {
-    padding: 5px 15px;
-    font-size: 20px;
-    font-weight: bold;
-    color: goldenrod;
-    border: none;
-    border: 1px solid goldenrod;
-    background-color: honeydew;
-    border-radius: 5px;
-    cursor: pointer;
-    transform: translateX(297px);
-}
 .wiev .resultat {
     padding: 20px;
     background-color: #fff;
@@ -63,94 +22,90 @@
     left: 50%;
     z-index: 33;
 }
-.wiev {
+.app {
+    position: relative;
+}
+.app .wiev {
     background-color: lightblue;
-    height: 60%;
+    height: 50%;
     overflow-y: auto;
     display: none;
-}
-.wiev ul {
-    list-style: none;
-    margin-top: 20px;
-}
-.wiev ul li {
-    font-size: 20px;
-}
-.wiev ul li:nth-child(1),
-.wiev ul li:nth-child(6),
-.wiev ul li:nth-child(11),
-.wiev ul li:nth-child(14),
-.wiev ul li:nth-child(15),
-.wiev ul li:nth-child(16),
-.wiev ul li:nth-child(17),
-.wiev ul li:nth-child(18),
-.wiev ul li:nth-child(19) {
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.wiev ul li:nth-child(1) input {
-    transform: translateX(60px);
-}
-.wiev ul li:nth-child(2) input {
-    transform: translateX(30px);
-}
-.wiev ul li:nth-child(3) input {
-    transform: translateX(16px);
-}
-.wiev ul li:nth-child(4) input {
-    transform: translateX(39px);
-}
-.wiev ul li:nth-child(5) input {
-    transform: translateX(14px);
-}
-.wiev ul li:nth-child(6) input {
-    transform: translateX(75px);
-}
-.wiev ul li:nth-child(7) input {
-    transform: translateX(32px);
-}
-.wiev ul li:nth-child(8) input {
-    transform: translateX(18px);
-}
-.wiev ul li:nth-child(9) input {
-    transform: translateX(41px);
-}
-.wiev ul li:nth-child(10) input {
-    transform: translateX(15px);
-}
-.wiev ul li:nth-child(11) input {
-    transform: translateX(100px);
-}
-.wiev ul li:nth-child(12) input {
-    transform: translateX(15px);
-}
-.wiev ul li:nth-child(13) input {
-    transform: translateX(13px);
-}
-.wiev ul li:nth-child(14) input {
-    transform: translateX(60px);
-}
-.wiev ul li:nth-child(15) input {
-    transform: translateX(70px);
-}
-.wiev ul li:nth-child(16) input {
-    transform: translateX(35px);
-}
-.wiev ul li:nth-child(17) input {
-    transform: translateX(39px);
-}
-.wiev ul li:nth-child(18) input {
-    transform: translateX(63px);
-}
-.wiev ul li:nth-child(19) input {
-    transform: translateX(15px);
-}
-.wiev ul input[type="number"] {
-    padding: 7px 15px;
-    border: none;
+    border:1px solid #000;
     border-radius: 5px;
+    padding: 4%;
+
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    z-index: 22;
 }
-.wiev ul input[type="radio"] {
-    width: 25px;
-    height: 25px;
+.app .pickup {
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    background-color: lightblue;
+    cursor: pointer;
+    padding: 5px 25px;
+    border: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: none;
+
+    position: fixed;
+    top: 200px;
+    right: 50px;
+    z-index: 22;
+}
+.wiev .pay {
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border: 1px solid #000;
+    background-color: honeydew;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: translateX(295px);
+}
+.app .wiev .draft {
+    list-style: none;
+}
+.app .wiev .draft ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0 0 0;
+}
+.app .wiev .draft li {
+    font-size: 22px;
+}
+.app .wiev .street {
+    list-style: none;
+    margin: 30px 0 0 0;
+}
+.app .wiev .street ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0 0 0;
+}
+.app .wiev .street li {
+    font-size: 22px;
+}
+.app .wiev .clean {
+    list-style: none;
+    margin: 30px 0 0 0;
+}
+.app .wiev .clean li {
+    font-size: 22px;
+}
+.app .wiev .money {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0 0 0;
+}
+.app .wiev .money li {
+    font-size: 22px;
 }

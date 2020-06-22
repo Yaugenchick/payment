@@ -31,26 +31,20 @@ let Calc = function (param) {
             inputelem.forEach(function (elem) {
                 valueInput = elem.value;
             });*/
-            let inputvalue = '',
-                radiovalue = '',
-                resultat = '',
-                sum = 0 ;
-                
-
-            let inputelem =document.querySelectorAll('.app .wiev ul li input');
-            inputelem.forEach(function (element) {
-                if(element.checked) radiovalue = element.value ;
-                if(element.getAttribute('name') == 'draft') inputvalue = element.value ;
-               
-
-               console.log(inputvalue);
-               console.log(radiovalue);
-            });
-         
+                  
+                //checkboxelem = document.querySelectorAll('.app .wiev ul li input[type="checkbox"]');
+               let numberelem = document.querySelectorAll('.app .wiev ul li input[type="number"]'),
+                    radioelem = document.querySelectorAll('.app .wiev ul li input[type="radio"]');
+                    let radio = '';
+                radioelem.forEach(function (elem) {
+                    if(elem.checked) radio = elem.value ;
+                });
+                console.log(radio);
         });
-
+         
     };
-}
+
+};
 
 window.addEventListener('load', function () {
     let calc = new Calc('app1');
