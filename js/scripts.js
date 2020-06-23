@@ -1,4 +1,5 @@
 let Calc = function (param) {
+    param = param;
 
     let add = function () {
 
@@ -16,26 +17,28 @@ let Calc = function (param) {
     let init = function () {
         let pay = document.querySelector('.pay');
         pay.addEventListener('click', function () {
-    
+
             let draft = function (param) {
-                param = param ;
+                param = param;
 
                 let number = document.querySelectorAll('.app .wiev .draft input[type="number"]'),
                     radio = document.querySelectorAll('.app .wiev .draft input[type="radio"]'),
                     radioValue = '',
-                    resDraft ;
+                    resDraft;
 
                 radio.forEach(function (element) {
                     if (element.checked) radioValue = element.value;
                 });
                 let numberValue = Object.values(number);
-                    resDraft = ((numberValue[0].value * radioValue) + (numberValue[1].value * radioValue) + (numberValue[2].value) * radioValue) * param;
-                //return resDraft;
-               console.log(resDraft);
+                resDraft = Math.round(((numberValue[0].value * radioValue) + (numberValue[1].value * radioValue) + (numberValue[2].value) * radioValue) * param);
+
+                //console.log(resDraft);
+                return resDraft;
+
             };
-            
+
             let street = function (param) {
-                param = param ;
+                param = param;
 
                 let number = document.querySelectorAll('.app .wiev .street input[type="number"]'),
                     radio = document.querySelectorAll('.app .wiev .street input[type="radio"]'),
@@ -46,20 +49,23 @@ let Calc = function (param) {
                     if (element.checked) radioValue = element.value;
                 });
                 let numberValue = Object.values(number);
-                    resStreet = (numberValue[0].value * radioValue) * param;
-               
-                console.log(resStreet);
+                resStreet = Math.round((numberValue[0].value * radioValue) * param);
+
+                //console.log(resStreet);
+                return resStreet;
             };
 
             let clean = function (param) {
-                param = param ;
+                param = param;
 
                 let number = document.querySelectorAll('.app .wiev .clean input[type="number"]'),
                     resClean,
                     numberValue = Object.values(number);
-                    
-                   resClean = ((numberValue[0].value * param) + (numberValue[1].value) + (numberValue[2].value) + (numberValue[3].value) + (numberValue[4].value) + (numberValue[5].value)) * param ;
-                    console.log(resClean);
+
+                resClean = Math.round(((numberValue[0].value) + (numberValue[1].value) + (numberValue[2].value) + (numberValue[3].value) + (numberValue[4].value) + (numberValue[5].value)) * param);
+
+                //console.log(resClean);
+                return resClean;
             };
 
             let money = function () {
@@ -69,15 +75,37 @@ let Calc = function (param) {
                 let checkbox = document.querySelectorAll('.app .wiev ul li input[type="checkbox"]'),
                     checkboxElem;
                 checkbox.forEach(function (element) {
-                    if(element.checked) checkboxElem = element.value ;
+                    if (element.checked) checkboxElem = element.value;
                 });
-               return checkboxElem;   //console.log(checkboxElem);
+
+                //console.log(checkboxElem);
+                return checkboxElem;
             };
-            
-            draft(money());
-            street(money());
-            clean(money());
-           
+
+            let showInit = function (param) {
+                param = param;
+
+                let divWraper = document.createElement('div'),
+                    divElem1 = document.createElement('div'),
+                    divElem2 = document.createElement('div'),
+                    divElem3 = document.createElement('div');
+
+                divElem1.innerHTML = param[0];
+                divElem2.innerHTML = param[1];
+                divElem3.innerHTML = param[2];
+
+                divWraper.appendChild(divElem1);
+                divWraper.appendChild(divElem2);
+                divWraper.appendChild(divElem3);
+
+                divWraper.classList.add('resultat');
+
+                let site = document.querySelector('.site');
+                site.appendChild(divWraper);
+
+                console.log(divWraper);
+            };
+            showInit([draft(money()), street(money()), clean(money())]);
         });
 
     };

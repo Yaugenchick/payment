@@ -10,16 +10,17 @@
 .add {
     display: block !important;
 }
-.wiev .resultat {
-    padding: 20px;
-    background-color: #fff;
+.resultat {
+    font-size: 25px;
+    padding: 30px;
+    background-color: rgb(252, 76, 76);
     border: 1px solid #000;
     border-radius: 5px;
     display: inline-block;
 
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 40%;
     z-index: 33;
 }
 .app {
