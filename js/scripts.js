@@ -1,4 +1,4 @@
-let Calc = function (param) {
+ function calc(param) {
     param = param;
 
     let add = function () {
@@ -9,6 +9,13 @@ let Calc = function (param) {
         pickup.addEventListener('click', function () {
             let wiev = document.querySelector('.wiev');
             wiev.classList.add('add');
+        });
+        let close = document.querySelector('.app .wiev .close');
+        close.addEventListener('click', function() {
+            let wievClose = document.querySelector('.app .wiev');
+           
+            wievClose.classList.remove('add');
+            pickup.classList.remove('add');
         });
         init();
     };
@@ -32,7 +39,6 @@ let Calc = function (param) {
                 let numberValue = Object.values(number);
                 resDraft = Math.round(((numberValue[0].value * radioValue) + (numberValue[1].value * radioValue) + (numberValue[2].value) * radioValue) * param);
 
-                //console.log(resDraft);
                 return resDraft;
 
             };
@@ -51,34 +57,33 @@ let Calc = function (param) {
                 let numberValue = Object.values(number);
                 resStreet = Math.round((numberValue[0].value * radioValue) * param);
 
-                //console.log(resStreet);
                 return resStreet;
             };
 
             let clean = function (param) {
                 param = param;
+                const powerCabel = 6 ,
+                      cabel = 3 ,
+                      pribor = 7 ,
+                      camera = 5 ;  
 
                 let number = document.querySelectorAll('.app .wiev .clean input[type="number"]'),
                     resClean,
                     numberValue = Object.values(number);
 
-                resClean = Math.round(((numberValue[0].value) + (numberValue[1].value) + (numberValue[2].value) + (numberValue[3].value) + (numberValue[4].value) + (numberValue[5].value)) * param);
+                resClean = Math.round(((numberValue[0].value * cabel) + (numberValue[1].value * powerCabel) + (numberValue[2].value * cabel) + (numberValue[3].value * cabel) + (numberValue[4].value * pribor) + (numberValue[5].value * camera)) * param);
 
-                //console.log(resClean);
                 return resClean;
             };
 
             let money = function () {
-                //const dollar = 2.4;
-                //const euro = 2.8;
-                //const ruble = 1;
+             
                 let checkbox = document.querySelectorAll('.app .wiev ul li input[type="checkbox"]'),
                     checkboxElem;
                 checkbox.forEach(function (element) {
                     if (element.checked) checkboxElem = element.value;
                 });
 
-                //console.log(checkboxElem);
                 return checkboxElem;
             };
 
@@ -103,7 +108,13 @@ let Calc = function (param) {
                 let site = document.querySelector('.site');
                 site.appendChild(divWraper);
 
-                console.log(divWraper);
+                let del = function(){ 
+                    let delElem  = document.querySelector('.site .resultat');  
+                    delElem.remove(delElem);
+                }
+                
+                divWraper.addEventListener('click', del);
+                    
             };
             showInit([draft(money()), street(money()), clean(money())]);
         });
@@ -113,5 +124,5 @@ let Calc = function (param) {
 };
 
 window.addEventListener('load', function () {
-    let calc = new Calc('app1');
+    calc('app1');
 });

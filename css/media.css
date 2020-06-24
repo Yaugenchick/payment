@@ -1,0 +1,19 @@
+@media (max-width: 1024px) {
+    .app .wiev {
+        position: absolute;
+        top: 150px;
+        left: 60px;
+        height: 550px;
+        width: 450px;
+    }
+    .app .pickup {
+        top: 550px;
+        left: 830px;
+    }
+    .app .wiev .close {
+        left:350px;
+    }
+    .app .wiev .pay {
+
+    }
+}

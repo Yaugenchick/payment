@@ -12,15 +12,18 @@
 }
 .resultat {
     font-size: 25px;
+    width: 300px;
+    height: 200px;
     padding: 30px;
     background-color: rgb(252, 76, 76);
     border: 1px solid #000;
     border-radius: 5px;
     display: inline-block;
+    opacity: .8;
 
-    position: fixed;
-    top: 30%;
-    left: 40%;
+    position: absolute;
+    top: 20%;
+    left: 30%;
     z-index: 33;
 }
 .app {
@@ -28,17 +31,32 @@
 }
 .app .wiev {
     background-color: lightblue;
-    height: 50%;
+    height: 450px;
+    width: 700px;
     overflow-y: auto;
     display: none;
     border:1px solid #000;
     border-radius: 5px;
     padding: 3%;
 
-    position: fixed;
-    top: 10%;
-    left: 20%;
+    position: absolute;
+    top: 30px;
+    left: 10%;
     z-index: 22;
+}
+.app .wiev .close {
+  
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    color:#fff;
+    border:2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    position: relative;
+    left: 660px;
+    top:0px;
 }
 .app .pickup {
     font-size: 30px;
@@ -52,9 +70,9 @@
     border-radius: 5px;
     display: none;
 
-    position: fixed;
-    top: 200px;
-    right: 50px;
+    position: relative;
+    top: 400px;
+    left: 1050px;
     z-index: 22;
 }
 .wiev .pay {
@@ -67,8 +85,8 @@
     background-color: red;
     border-radius: 5px;
     cursor: pointer;
-    transform: translateX(90%);
-    margin: 0 0 20px 0;
+    transform: translateX(550px);
+    margin: 30px 0 15px 0;
 }
 .app .wiev .draft {
     list-style: none;
@@ -110,4 +128,21 @@
 }
 .app .wiev .money li {
     font-size: 22px;
+}
+.app .wiev .draft input[type="radio"],
+.app .wiev .street input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 15px;
+}
+.app .wiev .money input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 15px;
+}
+.app .wiev input[type="number"] {
+    padding: 3px 5px 3px 30px;
+    border-radius: 3px;
+    margin: 10px 0 0 0;
+    transform: translateX(100px);
 }
