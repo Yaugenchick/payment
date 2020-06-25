@@ -32,15 +32,23 @@
 
                 let number = document.querySelectorAll ('.app .wiev .draft input[type="number"]'),
                     radio = document.querySelectorAll ('.app .wiev .draft input[type="radio"]'),
-                    radioValue = '',
-                    resDraft ;
+                    radioValue = '';
+                  
 
                 radio.forEach (function (element) {
                     if (element.checked) radioValue = element.value;
                 });
-                let numberValue = Object.values (number);
-                resDraft = Math.round (((numberValue[0].value * radioValue) + (numberValue[1].value * radioValue) + (numberValue[2].value) * radioValue) * param);
-
+                //let numberValue = Object.values (number);
+                //resDraft = Math.round ((numberValue[0].value * radioValue * param) + (numberValue[1].value * radioValue * param) + (numberValue[2].value * radioValue * param) );
+                let numberValueDraft,
+                    resDraft = 0,
+                    sum = 0;
+                number.forEach(function(element){
+                    numberValueDraft = element.value ;
+                    sum = Math.round(numberValueDraft * radioValue * param) ;
+                    resDraft += sum ;
+                });
+                
                 return resDraft;
 
             };
@@ -50,14 +58,22 @@
 
                 let number = document.querySelectorAll ('.app .wiev .street input[type="number"]'),
                     radio = document.querySelectorAll ('.app .wiev .street input[type="radio"]'),
-                    radioValue = '',
-                    resStreet ;
-
+                    radioValue = '';
+               
                 radio.forEach (function (element) {
                     if (element.checked) radioValue = element.value;
                 });
-                let numberValue = Object.values(number);
-                resStreet = Math.round ((numberValue[0].value * radioValue) * param);
+                //let numberValue = Object.values(number);
+                //resStreet = Math.round ((numberValue[0].value * radioValue) * param);
+                let numberValueStreet,
+                    resStreet = 0,
+                    sum = 0 ;
+
+                    number.forEach(function(element) {
+                        numberValueStreet = element.value ;
+                        sum = Math.round(numberValueStreet * radioValue * param) ;
+                        resStreet += sum ;
+                    });
 
                 return resStreet;
             };
@@ -70,10 +86,17 @@
                       camera = 5 ;  
 
                 let number = document.querySelectorAll ('.app .wiev .clean input[type="number"]'),
-                    resClean,
-                    numberValue = Object.values(number);
+                    numberValueClean,
+                    resClean = 0,
+                    sum = 0;
+                //    numberValue = Object.values(number);
 
-                resClean = Math.round ( ((numberValue[0].value * cabel) + (numberValue[1].value * powerCabel) + (numberValue[2].value * cabel) + (numberValue[3].value * cabel) + (numberValue[4].value * pribor) + (numberValue[5].value * camera)) * param );
+                //resClean = Math.round ( ((numberValue[0].value * cabel) + (numberValue[1].value * powerCabel) + (numberValue[2].value * cabel) + (numberValue[3].value * cabel) + (numberValue[4].value * pribor) + (numberValue[5].value * camera)) * param );
+                    number.forEach (function(element) {
+                        numberValueClean = element.value ;
+                        sum = Math.round(numberValueClean * param) ;
+                        resClean += sum ;
+                    });
 
                 return resClean;
             };
@@ -82,10 +105,11 @@
              
                 let checkbox = document.querySelectorAll ('.app .wiev ul li input[type="checkbox"]'),
                     checkboxElem ;
-
+                    
                     checkbox.forEach (function (element) {
                     if (element.checked) checkboxElem = element.value;
-                   // console.log(checkboxElem);
+
+                    //console.log(checkboxElem);
                 });
 
                 return checkboxElem;
