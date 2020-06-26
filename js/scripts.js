@@ -33,21 +33,21 @@
                 let number = document.querySelectorAll ('.app .wiev .draft input[type="number"]'),
                     radio = document.querySelectorAll ('.app .wiev .draft input[type="radio"]'),
                     radioValue = '';
-                  
-
+                    
                 radio.forEach (function (element) {
                     if (element.checked) radioValue = element.value;
                 });
-                //let numberValue = Object.values (number);
-                //resDraft = Math.round ((numberValue[0].value * radioValue * param) + (numberValue[1].value * radioValue * param) + (numberValue[2].value * radioValue * param) );
+        
                 let numberValueDraft,
                     resDraft = 0,
                     sum = 0;
                 number.forEach(function(element){
                     numberValueDraft = element.value ;
-                    sum = Math.round(numberValueDraft * radioValue * param) ;
+                    sum = Math.round((numberValueDraft * radioValue) / param );
                     resDraft += sum ;
                 });
+
+                if(!numberValueDraft && !radioValue && !param ) return 0;
                 
                 return resDraft;
 
@@ -63,17 +63,18 @@
                 radio.forEach (function (element) {
                     if (element.checked) radioValue = element.value;
                 });
-                //let numberValue = Object.values(number);
-                //resStreet = Math.round ((numberValue[0].value * radioValue) * param);
+              
                 let numberValueStreet,
                     resStreet = 0,
                     sum = 0 ;
 
                     number.forEach(function(element) {
                         numberValueStreet = element.value ;
-                        sum = Math.round(numberValueStreet * radioValue * param) ;
+                        sum = Math.round((numberValueStreet * radioValue) / param );
                         resStreet += sum ;
                     });
+
+                    if(!numberValueStreet && !radioValue && !param) return 0 ;
 
                 return resStreet;
             };
@@ -86,17 +87,16 @@
                       camera = 5 ;  
 
                 let number = document.querySelectorAll ('.app .wiev .clean input[type="number"]'),
-                    numberValueClean,
                     resClean = 0,
-                    sum = 0;
-                //    numberValue = Object.values(number);
+                    numberValue;
 
-                //resClean = Math.round ( ((numberValue[0].value * cabel) + (numberValue[1].value * powerCabel) + (numberValue[2].value * cabel) + (numberValue[3].value * cabel) + (numberValue[4].value * pribor) + (numberValue[5].value * camera)) * param );
-                    number.forEach (function(element) {
-                        numberValueClean = element.value ;
-                        sum = Math.round(numberValueClean * param) ;
-                        resClean += sum ;
-                    });
+                    numberValue = Object.values(number);
+                    
+                    if(!numberValue && !param) return 0;
+
+                    resClean = Math.round (((numberValue[0].value * cabel) + (numberValue[1].value * powerCabel) + (numberValue[2].value * cabel) + (numberValue[3].value * cabel) + (numberValue[4].value * pribor) + (numberValue[5].value * camera)) / param );
+
+                  
 
                 return resClean;
             };
@@ -109,7 +109,6 @@
                     checkbox.forEach (function (element) {
                     if (element.checked) checkboxElem = element.value;
 
-                    //console.log(checkboxElem);
                 });
 
                 return checkboxElem;
@@ -117,7 +116,7 @@
 
             let showInit = function (param) {
                 param = param || null;
-
+               
                 let divWraper = document.createElement ('div'),
                     divElem1 = document.createElement ('div'),
                     divElem2 = document.createElement ('div'),
