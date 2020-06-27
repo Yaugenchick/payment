@@ -37,12 +37,14 @@
                 radio.forEach (function (element) {
                     if (element.checked) radioValue = element.value;
                 });
-        
+                console.log(radioValue);
+                console.log(param);
                 let numberValueDraft,
                     resDraft = 0,
                     sum = 0;
                 number.forEach(function(element){
                     numberValueDraft = element.value ;
+                    console.log(numberValueDraft);
                     sum = Math.round((numberValueDraft * radioValue) / param );
                     resDraft += sum ;
                 });
@@ -81,6 +83,7 @@
 
             let clean = function (param) {
                 param = param || null;
+
                 const powerCabel = 6 ,
                       cabel = 3 ,
                       pribor = 7 ,
@@ -94,9 +97,10 @@
                     
                     if(!numberValue && !param) return 0;
 
-                    resClean = Math.round (((numberValue[0].value * cabel) + (numberValue[1].value * powerCabel) + (numberValue[2].value * cabel) + (numberValue[3].value * cabel) + (numberValue[4].value * pribor) + (numberValue[5].value * camera)) / param );
-
-                  
+                    resClean = ((numberValue[0].value * cabel) + (numberValue[1].value * powerCabel) + (numberValue[2].value * cabel) + (numberValue[3].value * cabel) + (numberValue[4].value * pribor) + (numberValue[5].value * camera)) / Math.round(param) ;
+               
+                  if(resClean == NaN) return 0;
+                  console.dir(resClean);
 
                 return resClean;
             };
@@ -108,6 +112,7 @@
                     
                     checkbox.forEach (function (element) {
                     if (element.checked) checkboxElem = element.value;
+                  
 
                 });
 
