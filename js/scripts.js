@@ -37,8 +37,7 @@
                 radio.forEach (function (element) {
                     if (element.checked) radioValue = element.value;
                 });
-                console.log(radioValue);
-                console.log(param);
+              
                 let numberValueDraft,
                     resDraft = 0,
                     sum = 0;
@@ -88,20 +87,17 @@
                       cabel = 3 ,
                       pribor = 7 ,
                       camera = 5 ;  
-
+                     
                 let number = document.querySelectorAll ('.app .wiev .clean input[type="number"]'),
                     resClean = 0,
                     numberValue;
 
+                    if(!numberValue && !param) return 0 ;
+                   
                     numberValue = Object.values(number);
-                    
-                    if(!numberValue && !param) return 0;
 
-                    resClean = ((numberValue[0].value * cabel) + (numberValue[1].value * powerCabel) + (numberValue[2].value * cabel) + (numberValue[3].value * cabel) + (numberValue[4].value * pribor) + (numberValue[5].value * camera)) / Math.round(param) ;
+                    resClean = Math.round(((numberValue[0].value * cabel) + (numberValue[1].value * powerCabel) + (numberValue[2].value * cabel) + (numberValue[3].value * cabel) + (numberValue[4].value * pribor) + (numberValue[5].value * camera)) / param) ;
                
-                  if(resClean == NaN) return 0;
-                  console.dir(resClean);
-
                 return resClean;
             };
 
@@ -112,8 +108,7 @@
                     
                     checkbox.forEach (function (element) {
                     if (element.checked) checkboxElem = element.value;
-                  
-
+                      
                 });
 
                 return checkboxElem;
@@ -136,11 +131,19 @@
                                         border-radius: 3px;
                                         background-color: blue;
                                         width: 20px;
-                                        hight: 10px;`     
+                                        hight: 10px;`;
 
-                    divElem1.innerHTML = 'черновые работы' + ' ' + param[0];
-                    divElem2.innerHTML = 'ввод питания' + ' ' + param[1];
-                    divElem3.innerHTML = 'чистовые работы' + ' ' + param[2];
+                    let valuta = 'рублей';
+
+                    let dollar = document.querySelector('.app .wiev ul li input[name="dollar"]'),
+                        euro  = document.querySelector('.app .wiev ul li input[name="euro"]');
+
+                    if (dollar.checked) valuta = 'доларов';
+                    if (euro.checked) valuta = 'евро';
+
+                    divElem1.innerHTML = 'черновые работы' + ' ' + param[0] + ' ' + valuta;
+                    divElem2.innerHTML = 'ввод питания' + ' ' + param[1] + ' ' + valuta;
+                    divElem3.innerHTML = 'чистовые работы' + ' ' + param[2] + ' ' +valuta;
                     buttonElem.innerHTML = 'x';
 
                     divWraper.appendChild (divElem1);
